@@ -13,14 +13,19 @@ def isPrime():
     givenNum = int(request.form['number'])
     noOfFactors = 0
     halfPlusOne = givenNum/2+1
-    for i in range(1,halfPlusOne):
-        if givenNum%i==0:
-            noOfFactors+=1
-    
-    if noOfFactors>1:
-        _isPrime=False
-    else:
-        _isPrime=True
+    if givenNum<0:
+        _isPrime = "Please enter a non-negative number!"
+    elif givenNum<2:
+        _isPrime= "It is neither a prime nor a composite"
+    else :
+        for i in range(2,halfPlusOne):
+            if givenNum%i==0:
+                noOfFactors+=1
+        
+        if noOfFactors>=1:
+            _isPrime=False
+        else:
+            _isPrime=True
         
     return jsonify(isPrime = _isPrime, number = givenNum)
 

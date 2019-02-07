@@ -12,8 +12,11 @@ $('#submit').click(function(){
             console.log(isPrime);
             if(isPrime===true){
                 $('#output').html(num+' is a prime number!');
-            }else{
+            }else if(isPrime===false){
                 $('#output').html(num+' is not a prime number!');
+            }
+            else {
+                $('#output').html(isPrime);
             }
         });
     }
