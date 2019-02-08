@@ -5,7 +5,7 @@ $('#submit').click(function(){
         //     url: "http://18.222.125.227/isPrime",
         //     data: {'number': number}
         //   }).done(onSuccessCallThis);
-        $.post('http://18.222.125.227/isPrime', {'number': number}, function(data){
+        $.post(window.location.href+'isPrime', {'number': number}, function(data){
             console.log(data);
             isPrime = data['isPrime']
             const num = data['number'];
