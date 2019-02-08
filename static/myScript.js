@@ -1,6 +1,9 @@
 $('#submit').click(function(){
     const number = $('#number').val();
-    if(number!==undefined || number !== null){
+    if(number>32767){
+        $('#output').html('Please enter a number < 32767');
+    }
+    else if(number!==undefined || number !== null){
         // $.ajax({
         //     url: "http://18.222.125.227/isPrime",
         //     data: {'number': number}
@@ -21,8 +24,3 @@ $('#submit').click(function(){
         });
     }
 })
-
-
-
-
-
