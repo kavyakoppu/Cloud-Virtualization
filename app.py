@@ -30,5 +30,6 @@ def isPrime():
     return jsonify(isPrime = _isPrime, number = givenNum)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port = 80)
+    app.run(host="0.0.0.0", port=443, ssl_context=('prime.crt','prime.key'))
+    #app.run(host="0.0.0.0", port=80)
 
